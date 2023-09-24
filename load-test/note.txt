@@ -20,10 +20,21 @@ how to run k6 cases
 how to run with dashboard
   - Install
     go install go.k6.io/xk6/cmd/xk6@latest
-  - Set go/bin to ENV
-    GOPATH
-  - Build new k6.exe
-    xk6 build --with github.com/grafana/xk6-dashboard@latest
+  Window
+    - Set go/bin to ENV
+      GOPATH
+    - Build new k6.exe
+      xk6 build --with github.com/grafana/xk6-dashboard@latest
+  Mac
+    - Goto xk6 folder
+      /your_user/go/bin
+    - Build new k6 file
+      xk6 build --with github.com/grafana/xk6-dashboard@latest
+  Move new k6 file to /load-test project
   - Run
     ./k6 run --out dashboard=open ./case-1.js
     http://127.0.0.1:5665
+
+For Mac
+  docker pull amd64/mysql:5.7
+  docker run -d -p 3306:3306 -e MYSQL_ROOT_USER=root -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=load_test --name mysql-load-test amd64/mysql:5.7
