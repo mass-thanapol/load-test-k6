@@ -1,0 +1,29 @@
+how to start on window
+1. install chocolatey
+  - Doc
+    https://chocolatey.org/install
+  - Open powershell as admin and run
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  - Check version
+    choco --version
+2. install k6
+  - Run
+    choco install k6
+  - Check version
+    k6 version
+
+how to run k6 cases
+  - Run
+    k6 run case-1.js
+    k6 run case-2.js
+
+how to run with dashboard
+  - Install
+    go install go.k6.io/xk6/cmd/xk6@latest
+  - Set go/bin to ENV
+    GOPATH
+  - Build new k6.exe
+    xk6 build --with github.com/grafana/xk6-dashboard@latest
+  - Run
+    ./k6 run --out dashboard=open ./case-1.js
+    http://127.0.0.1:5665

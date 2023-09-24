@@ -1,0 +1,15 @@
+CREATE DATABASE load_test;
+
+USE load_test;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tokens (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  token VARCHAR(255) NOT NULL
+);
